@@ -35,15 +35,17 @@ if __name__ == "__main__":
     element = wd.find_element(By.ID, "kw")
 
     # 调用元素对象的send_keys方法，操作对象输入字符串“通信”进行查询
-    element.send_keys("通信\n")
+    element.send_keys("通信")
 
-    # 查找id=“go”的元素并获取WebElement对象，查找“查询”按钮
-    element = wd.find_element(By.ID, "go")
+    print(element.get_attribute("value"))
+    print(element.text)
 
-    # 对WebElement对象进行点击操作，点击查询按钮
-    element.click()
-    print_error("查找含“通信”的元素")
+    # # 查找id=“go”的元素并获取WebElement对象，查找“查询”按钮
+    # element = wd.find_element(By.ID, "go")
+
+    # # 对WebElement对象进行点击操作，点击查询按钮
+    # element.click()
 
     # 退出浏览器驱动
     sleep(3)
-    wd.quit()
+    # wd.quit()
