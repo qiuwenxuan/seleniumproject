@@ -34,7 +34,7 @@ def wait_for_element_decorator(wait_time=10):
 
 
 if __name__ == "__main__":
-    # 打开谷歌浏览器，指定浏览器驱动，返回一个 WebDriver类型 的全局页面对象用于操作元素
+    # 打开谷歌浏览器，指定浏览器驱动，返回一个 WebDriver类型的全局页面对象用于操作元素
     wd = webdriver.Chrome()
 
     # 打开指定浏览器网址

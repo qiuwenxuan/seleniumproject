@@ -21,11 +21,10 @@ if __name__ == "__main__":
             element.text
         )  # 打印WebElement的text属性，及就是元素在网页上文本的显示：土豆、养成、白菜
 
-    t.print_debug()
-
     elements = wd.find_elements(By.TAG_NAME, "span")
     for element in elements:
         print(element.text)  # 打印WebElement的text文本属性，及在网页上显示的文本内容
 
+    input()
     sleep(3)
     wd.quit()
