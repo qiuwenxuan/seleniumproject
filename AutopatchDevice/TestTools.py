@@ -1,26 +1,11 @@
 import logging
-
-# 配置日志记录器
-logger = logging.getLogger("test")
-logger.setLevel(logging.DEBUG)
-
-formatter = logging.Formatter(
-    "%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s"
-)
-
-file_handler = logging.FileHandler(r"pythonstudy\log\test.log", encoding="utf-8")
-
-stream_handler = logging.StreamHandler()
-stream_handler.setLevel(logging.DEBUG)
-stream_handler.setFormatter(formatter)
-
-logger.addHandler(file_handler)
-logger.addHandler(stream_handler)
+import logging
 
 
+# 格式化输出日志
 def logging_format(
-    message: str,
-    form: str = "info",
+    message,
+    form: str = "debug",
     signal: str = "=",
     total_length: int = 80,
 ) -> None:
@@ -28,14 +13,16 @@ def logging_format(
     格式化字符串以居中显示，并输出为不同级别的日志信息。
 
     Args:
-        form (str): 选择采用 info、debug、error 级别打印日志。
         message (str): 打印的字符串信息。
+        form (str): 选择采用 info、debug、error 级别打印日志。
         signal (str, optional): 输出日志的符号。默认是 "="。
         total_length (int, optional): 输出日志的长度。默认是 80。
 
     Returns:
         None
     """
+    message = str(message)
+
     # 计算需要填充的符号的数量
     if message == None or message == "":
         logging.debug(message)
