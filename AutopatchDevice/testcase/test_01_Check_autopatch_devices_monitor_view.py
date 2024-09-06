@@ -1,7 +1,7 @@
 import configparser
 import logging
 import os
-from time import sleep, time
+from time import time
 import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -12,7 +12,7 @@ from selenium.webdriver.support import expected_conditions as EC
 def config():
     """读取配置文件并返回 'settings' 部分"""
     config = configparser.ConfigParser()
-    config_file_path = r"C:\workspace\pythonstudy\AutopatchDevice\config.ini"
+    config_file_path = r"/AutopatchDevice/config.ini"
 
     # 读取配置文件
     config.read(config_file_path)

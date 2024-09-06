@@ -1,6 +1,6 @@
 import configparser
 
-file = r"C:\workspace\pythonstudy\AutopatchDevice\config.ini"
+file = r"/AutopatchDevice/config/config.ini"
 
 # 创建配置文件对象
 con = configparser.ConfigParser()
