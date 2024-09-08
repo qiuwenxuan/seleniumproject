@@ -1,0 +1,40 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+  simple:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  detailed:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s [%(filename)s:%(lineno)d]"
+
+handlers:
+  console_handler:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+  info_file_handler:
+    class: logging.handlers.RotatingFileHandler
+    level: INFO
+    formatter: simple
+    filename: E:\workspace\seleniumproject\AutopatchDevice\log\info.log
+    mode: 'w' #
+    maxBytes: 10485760
+    backupCount: 20
+    encoding: utf8
+  error_file_handler:
+    class: logging.handlers.RotatingFileHandler
+    level: ERROR
+    formatter: simple
+    filename: E:\workspace\seleniumproject\AutopatchDevice\log\errors.log
+    mode: 'w' # 如果设置模式为w，由于设置了日志最大存储内存，因此日志并不会被覆盖;且模式为a,如果不存在日志文件还会创建
+    maxBytes: 10485760
+    backupCount: 20
+    encoding: utf8
+loggers:
+  my_logger:
+    level: ERROR
+    handlers: [ error_file_handler ]
+    propagate: no
+root:
+  level: INFO
+  handlers: [ console_handler,info_file_handler,error_file_handler ]
