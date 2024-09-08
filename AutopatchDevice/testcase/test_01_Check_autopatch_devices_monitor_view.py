@@ -1,6 +1,7 @@
 import configparser
 import logging
 import os
+from time import time
 import pytest
 
 from AutopatchDevice.TestTools import save_screenshot, ele_input, ele_click, get_ele_html
